@@ -68,7 +68,7 @@ void process_rotr(stack_t **stack, unsigned int line_num)
 
 	process_pop(stack, line_num);
 
-	process_add_node(stack, last_val);
+	process_addnode(stack, last_val);
 }
 
 /**
@@ -81,7 +81,7 @@ void process_queue(stack_t **stack, unsigned int line_num)
 	(void)stack;
 	(void)line_num;
 
-	bus.lifo = 0;
+	bus.lifi = 0;
 }
 
 /**
@@ -94,6 +94,6 @@ void process_stack(stack_t **stack, unsigned int line_num)
 	(void)stack;
 	(void)line_num;
 
-	bus.lifo = 1;
+	bus.lifi = 1;
 }
 
