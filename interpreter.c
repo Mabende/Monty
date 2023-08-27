@@ -23,14 +23,13 @@ void execute(char *line_content, stack_t **stack,
 		{"stack", process_stack}, {NULL, NULL}
 	};
 
+	unsigned int i = 0;
 	char *op_code = strtok(line_content, " \n\t");
 
 	if (!op_code || op_code[0] == '#')
 		return;
 
 	bus.arg = strtok(NULL, " \n\t");
-
-	unsigned int i = 0;
 
 	while (opcode_func[i].opcode)
 	{
@@ -41,9 +40,8 @@ void execute(char *line_content, stack_t **stack,
 		}
 		i++;
 	}
-
 	fprintf(stderr, "L%d: unknown instruction %s\n",
-		line_counter, op_code);
+			line_counter, op_code);
 	fclose(monty_file);
 	free(line_content);
 	process_free_stack(*stack);
